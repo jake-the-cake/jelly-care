@@ -4,7 +4,8 @@ import { Route, Routes, Link, BrowserRouter } from 'react-router-dom'
 import { Login } from './pages/Login';
 
 const UserContext: Context<any> = createContext({user: 'hi'})
-let user = 'papa'
+let user: string | null = 'papa'
+// user = null
 
 const App = () => {
   return (
@@ -12,13 +13,18 @@ const App = () => {
       <BrowserRouter>
         <nav className='header__container'>
           Navbar
-          <Link to='/about'>About</Link>
+          <Link to='/login'>Login</Link>
+          <Link to='/home'>Dashboard</Link>
           <Link to='/'>Home</Link>
         </nav>
         <Routes>
-          <Route path='/' element={user ? <Dashboard /> : <Login />} />
-          <Route path='/about' element={<>About</>} />
+          <Route path='/' element={<>Home Page</>} />
+          <Route path='/home' element={user ? <Dashboard /> : <Login />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
+        <footer>
+          Footer
+        </footer>
       </BrowserRouter>
     </UserContext.Provider>
   );
