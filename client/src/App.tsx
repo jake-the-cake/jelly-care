@@ -1,8 +1,9 @@
 import React, { Context, createContext } from 'react'
 import { Dashboard } from './pages/Dashboard';
 import { Route, Routes, Link, BrowserRouter } from 'react-router-dom'
+import { Login } from './pages/Login';
 
-const UserContext: Context<any> = createContext(null)
+const UserContext: Context<any> = createContext({user: 'hi'})
 let user = 'papa'
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
           <Link to='/'>Home</Link>
         </nav>
         <Routes>
-          <Route path='/' element={<Dashboard />} />
+          <Route path='/' element={user ? <Dashboard /> : <Login />} />
           <Route path='/about' element={<>About</>} />
         </Routes>
       </BrowserRouter>
