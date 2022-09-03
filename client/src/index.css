@@ -37,10 +37,20 @@ code {
   gap: 1rem;
 }
 
+.container-full {
+  width: 100%;
+}
+
 .container-90 {
   width: 90%;
+}
+
+.container-90,
+.container-full{
   border-radius: .5rem;
-  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .flex-1 {
@@ -51,9 +61,17 @@ code {
   box-shadow: 0px 4px 12px -3px #ededed;
 }
 
+.shadow-sm-light {
+  box-shadow: 0px 2px 8px -3px #ededed;
+}
+
 .bg-darker {
   background-color: #161616;
   color: #ededed;
+}
+
+.bg-dark {
+  background-color: #373737;
 }
 
 .bg-light {
