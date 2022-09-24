@@ -15,7 +15,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<>Home Page</>} />
-          <Route path='/home' element={user ? <Dashboard /> : <Login />} />
+          <Route path='/dashboard' element={user ? <Dashboard /> : <Login />} />
           <Route path='/login' element={<Login />} />
         </Routes>
         <footer>

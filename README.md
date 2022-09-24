@@ -21,3 +21,15 @@ The primary purpose is to create an easy way for parents that live apart from ea
 
 ### Releases:
 - Nothing yet
+
+### Roadmap:
+- APPS
+  - Custody schedule
+  - Activity Schedule
+  - Alerts/Notifications (main feed?)
+  - Meal planning
+  - Albums/Memories
+  - Health check / Doctor visits
+  - Sleep tracker
+  - Message system / schedule change request system (2 way OK feature)
+  - Supply inventory / sale tracker
