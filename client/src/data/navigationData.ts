@@ -8,11 +8,6 @@ export const navigationData: NavigationDataProps[] = [
     {
       type: 'link',
       url: '/',
-      text: 'Home'
-    },
-    {
-      type: 'link',
-      url: '/dashboard',
       text: 'Dashboard'
     },
     {

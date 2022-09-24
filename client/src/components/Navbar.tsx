@@ -1,7 +1,11 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { UserContext } from '../context/ActiveUserContext'
 import { navigationData } from '../data/navigationData'
 
 export const Navbar = () => {
+  const ctx = useContext(UserContext)
+  console.log(ctx)
   return (
     <nav className='header__container'>
       <div className='header__title'>
