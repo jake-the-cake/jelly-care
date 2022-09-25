@@ -4,10 +4,7 @@ import { UserContext } from '../context/ActiveUserContext'
 import { navigationData } from '../data/navigationData'
 
 export const Navbar = () => {
-  const { state, dispatch }: any = useContext(UserContext)
-  console.log('current state')
-  console.log(state)
-  // console.log(dispatch)
+  const { dispatch }: any = useContext(UserContext)
   return (
     <nav className='header__container'>
       <div className='header__title'>

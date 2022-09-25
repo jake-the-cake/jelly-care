@@ -6,7 +6,8 @@ interface ActiveUserContextProps {
 
 export interface ActiveUserProps {
   id: string,
-  name: string
+  name: string,
+  email: string,
 }
 
 export const UserContext: React.Context<{activeUser: ActiveUserProps} | {}> = createContext({})
@@ -14,7 +15,8 @@ export const UserContext: React.Context<{activeUser: ActiveUserProps} | {}> = cr
 const data = {
   activeUser: {
     id: '1jk3i8899dDFG32',
-    name: 'jake'
+    name: 'jake',
+    email: 'email@jake.jake'
   }
 }
 
@@ -23,10 +25,8 @@ const loginReducer: Reducer<any, any> = ( state: { activeUser: ActiveUserProps }
   
   switch (action.type) {
     case 'LOGOUT':
-      console.log('try init')
       return {activeUser: {id:'', name:''}}
     default:
-      console.log('do default')
       return state
   }
 }

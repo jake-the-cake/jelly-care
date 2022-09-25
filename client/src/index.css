@@ -125,3 +125,10 @@ nav, footer {
   flex-direction: column;
   gap: 1rem;
 }
+
+.form__error--text {
+  color: var(--dark);
+  font-size: .8rem;
+  margin: -.7rem auto auto;
+  font-style: italic;
+}
