@@ -1,15 +1,15 @@
-import { createContext, useReducer } from "react"
+import { createContext, Reducer, useReducer } from "react"
 
 interface ActiveUserContextProps {
   children: any
 }
 
-interface ActiveUserProps {
+export interface ActiveUserProps {
   id: string,
   name: string
 }
 
-export const UserContext: React.Context<ActiveUserProps | {}> = createContext({})
+export const UserContext: React.Context<{activeUser: ActiveUserProps} | {}> = createContext({})
 
 const data = {
   activeUser: {
@@ -18,22 +18,27 @@ const data = {
   }
 }
 
-const loginReducer = ( state: any, action: any ) => {
+const loginReducer: Reducer<any, any> = ( state: { activeUser: ActiveUserProps }, action: any ) => {
   
   
   switch (action.type) {
+    case 'LOGOUT':
+      console.log('try init')
+      return {activeUser: {id:'', name:''}}
     default:
-      return state.a
+      console.log('do default')
+      return state
   }
 }
 
 export const ActiveUserContext = ( { children }: ActiveUserContextProps ) => {
-
+  console.log('call the context')
   const [ state, dispatch ] = useReducer( loginReducer, data )
   
+  const value = { state, dispatch }
 
   return (
-    <UserContext.Provider value={data}>
+    <UserContext.Provider value={value}>
       { children }
     </UserContext.Provider>
   )

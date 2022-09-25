@@ -4,8 +4,10 @@ import { UserContext } from '../context/ActiveUserContext'
 import { navigationData } from '../data/navigationData'
 
 export const Navbar = () => {
-  const ctx = useContext(UserContext)
-  console.log(ctx)
+  const { state, dispatch }: any = useContext(UserContext)
+  console.log('current state')
+  console.log(state)
+  // console.log(dispatch)
   return (
     <nav className='header__container'>
       <div className='header__title'>
@@ -14,9 +16,10 @@ export const Navbar = () => {
       <div className='header__nav'>
         {
           navigationData.map(( link, index: number ) => (
-            link.type === 'link' && <Link className='header__nav--link' to={link.url}>{ link.text }</Link>
+            link.type === 'link' && <Link key={ `navlink-${index}` }className='header__nav--link' to={link.url}>{ link.text }</Link>
           ))
         }
+        <button onClick={() => dispatch({ type: 'LOGOUT' })}>Log out</button>
       </div>
     </nav>
   )

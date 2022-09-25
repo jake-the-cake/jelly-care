@@ -84,7 +84,7 @@ code {
 
 .bg-orange {
   background-color: var(--orange);
-  color: var(--darker)
+  color: var(--darker);
 }
 
 .bg-light {
@@ -118,4 +118,10 @@ nav, footer {
 .header__nav--link {
   font-style: italic;
   color: var(--orange);
+}
+
+.form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
